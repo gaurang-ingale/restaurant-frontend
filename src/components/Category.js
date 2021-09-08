@@ -1,3 +1,4 @@
+import "./styles/Category.scss";
 import PropTypes, { object } from "prop-types";
 import Item from "./Item";
 

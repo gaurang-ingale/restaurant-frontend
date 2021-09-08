@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Category from "../components/Category";
+import "./styles/Menu.scss";
 
 const Menu = () => {
   const [isLoaded, setIsLoaded] = useState(false);

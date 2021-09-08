@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import "./styles/Item.scss";
+
 const Item = ({ name, picture, price, description, currency }) => {
   return (
     <article id="item-container">
