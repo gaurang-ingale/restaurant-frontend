@@ -6,7 +6,6 @@ const Category = ({ name, items }) => {
     const itemElements = [];
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      console.log(items);
       const currentElement = (
         <Item
           key={item.id}

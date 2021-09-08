@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Category from "../components/Category";
-import Item from "../components/Item";
 
 const Menu = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,8 +13,6 @@ const Menu = () => {
         .then(
           (result) => {
             setIsLoaded(true);
-            console.log("Response is: ");
-            console.log(result);
             const categoryElements = prepareCategoryElements(result);
             setCategories(categoryElements);
           },
@@ -38,15 +35,13 @@ const Menu = () => {
       if (extracted == null || extracted.length === 0) {
         continue;
       }
-      if (itemOrItems == "item") {
+      if (itemOrItems === "item") {
         items.push(extracted);
       } else {
         for (const item in extracted) {
-          console.log(extracted[item]);
           items.push(extracted[item]);
         }
       }
-      //console.log(items);
       const currentElement = (
         <Category key={category.id} name={category.category} items={items} />
       );
@@ -55,12 +50,33 @@ const Menu = () => {
     return categoryElements;
   };
 
-  return (
+  const loadedAndNoError = (
     <main id="menu-container">
       <h1>Menu:</h1>
       {categories}
     </main>
   );
+
+  const errorCase = (
+    <main id="menu-container">
+      <p id="menu-error">
+        Unfortunately there was an error loading the menu from our servers.
+        Please try again later. We are terribly sorry for the inconvinience!
+      </p>
+    </main>
+  );
+
+  const loadingCase = (
+    <main id="menu-container">
+      <p id="menu-loading">The freshest of our menus is now loading! :)</p>
+    </main>
+  );
+
+  return !isLoaded
+    ? loadingCase
+    : isLoaded && !error
+    ? loadedAndNoError
+    : errorCase;
 };
 
 export default Menu;
