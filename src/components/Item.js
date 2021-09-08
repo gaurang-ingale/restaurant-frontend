@@ -3,7 +3,11 @@ const Item = ({ name, picture, price, description, currency }) => {
   return (
     <article id="item-container">
       <figure>
-        <img id="item-image" src={picture} alt=""></img>
+        <img
+          id="item-image"
+          src={"http://localhost:1337" + picture}
+          alt=""
+        ></img>
         <figcaption id="item-title">{name}</figcaption>
       </figure>
       <p id="item-description">{description}</p>
