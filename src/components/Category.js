@@ -25,7 +25,7 @@ const Category = ({ name, items }) => {
   return (
     <section id="category-container">
       <h2 id="category-title">{name}</h2>
-      {makeItemElements()}
+      <div id="category-items-grid">{makeItemElements()}</div>
     </section>
   );
 };

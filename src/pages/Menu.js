@@ -53,7 +53,7 @@ const Menu = () => {
 
   const loadedAndNoError = (
     <main id="menu-container">
-      <h1>Menu:</h1>
+      <h1 id="menu-title">Menu:</h1>
       {categories}
     </main>
   );

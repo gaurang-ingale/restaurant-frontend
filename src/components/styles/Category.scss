@@ -1,7 +1,17 @@
 #category-container {
+  min-width: 90vw;
   display: flex;
-  width: 30vw;
+  flex-direction: column;
+  align-items: center;
   max-height: 100%;
-  margin: 5rem 5rem;
-  padding: 2rem 2rem;
+  margin: 4rem 1rem;
+  padding: 1rem 2rem;
+}
+
+#category-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+  grid-auto-rows: max-content;
+  width: 100%;
+  justify-content: center;
 }
