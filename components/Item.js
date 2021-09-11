@@ -1,19 +1,19 @@
 import PropTypes from "prop-types";
-import "./styles/Item.scss";
+import styles from "./styles/Item.module.scss";
 
 const Item = ({ name, picture, price, description, currency }) => {
   return (
-    <article id="item-container">
+    <article id={styles.item_container}>
       <figure>
         <img
-          id="item-image"
+          id={styles.item_image}
           src={"http://localhost:1337" + picture}
           alt=""
         ></img>
-        <figcaption id="item-title">{name}</figcaption>
+        <figcaption id={styles.item_title}>{name}</figcaption>
       </figure>
-      <p id="item-description">{description}</p>
-      <p id="item-price">{currency + price}</p>
+      <p id={styles.item_description}>{description}</p>
+      <p id={styles.item_price}>{currency + price}</p>
     </article>
   );
 };

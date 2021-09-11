@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Category from "../components/Category";
-import "./styles/Menu.scss";
+import styles from "./styles/Menu.module.scss";
 
 const Menu = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -52,15 +52,15 @@ const Menu = () => {
   };
 
   const loadedAndNoError = (
-    <main id="menu-container">
-      <h1 id="menu-title">Menu:</h1>
+    <main id={styles.menu_container}>
+      <h1 id={styles.menu_title}>Menu:</h1>
       {categories}
     </main>
   );
 
   const errorCase = (
-    <main id="menu-container">
-      <p id="menu-error">
+    <main id={styles.menu_container}>
+      <p id={styles.menu_error}>
         Unfortunately there was an error loading the menu from our servers.
         Please try again later. We are terribly sorry for the inconvinience!
       </p>
@@ -68,8 +68,10 @@ const Menu = () => {
   );
 
   const loadingCase = (
-    <main id="menu-container">
-      <p id="menu-loading">The freshest of our menus is now loading! :)</p>
+    <main id={styles.menu_container}>
+      <p id={styles.menu_loading}>
+        The freshest of our menus is now loading! :)
+      </p>
     </main>
   );
 

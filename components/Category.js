@@ -1,4 +1,4 @@
-import "./styles/Category.scss";
+import styles from "./styles/Category.module.scss";
 import PropTypes, { object } from "prop-types";
 import Item from "./Item";
 
@@ -23,9 +23,9 @@ const Category = ({ name, items }) => {
   };
 
   return (
-    <section id="category-container">
-      <h2 id="category-title">{name}</h2>
-      <div id="category-items-grid">{makeItemElements()}</div>
+    <section id={styles.category_container}>
+      <h2 id={styles.category_title}>{name}</h2>
+      <div id={styles.category_items_grid}>{makeItemElements()}</div>
     </section>
   );
 };

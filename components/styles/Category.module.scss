@@ -1,4 +1,4 @@
-#category-container {
+#category_container {
   min-width: 90vw;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   padding: 1rem 2rem;
 }
 
-#category-items-grid {
+#category_items_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-auto-rows: max-content;
@@ -16,10 +16,11 @@
   justify-content: center;
 }
 
-#category-title {
+#category_title {
   font-size: 2rem;
   width: 100%;
   max-width: 100vw;
   padding: 1rem 0;
   border-bottom: 1px solid black;
+  text-align: center;
 }
