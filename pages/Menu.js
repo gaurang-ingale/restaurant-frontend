@@ -2,31 +2,11 @@ import { useEffect, useState } from "react";
 import Category from "../components/Category";
 import styles from "./styles/Menu.module.scss";
 
-const Menu = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
-  const [categories, setCategories] = useState(null);
-
-  useEffect(
-    () => {
-      fetch("http://localhost:1337/menus")
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            setIsLoaded(true);
-            const categoryElements = prepareCategoryElements(result);
-            setCategories(categoryElements);
-          },
-          (error) => {
-            setIsLoaded(true);
-            setError(error);
-          }
-        );
-    },
-    [] /*Empty dependency array means, run only once as in with componentDidMount*/
-  );
-
+const Menu = (props) => {
   const prepareCategoryElements = (result) => {
+    if (props.error) {
+      return;
+    }
     const categoryElements = [];
     for (let i = 0; i < result.length; i++) {
       const category = result[i];
@@ -51,10 +31,10 @@ const Menu = () => {
     return categoryElements;
   };
 
-  const loadedAndNoError = (
+  const normal = (
     <main id={styles.menu_container}>
       <h1 id={styles.menu_title}>Menu:</h1>
-      {categories}
+      {prepareCategoryElements(props.data)}
     </main>
   );
 
@@ -67,19 +47,27 @@ const Menu = () => {
     </main>
   );
 
-  const loadingCase = (
-    <main id={styles.menu_container}>
-      <p id={styles.menu_loading}>
-        The freshest of our menus is now loading! :)
-      </p>
-    </main>
-  );
-
-  return !isLoaded
-    ? loadingCase
-    : isLoaded && !error
-    ? loadedAndNoError
-    : errorCase;
+  return !props.error ? normal : errorCase;
 };
+
+export async function getStaticProps(context) {
+  const result = await fetch("http://localhost:1337/menus");
+  const data = await result.json();
+  if (!data) {
+    return {
+      props: {
+        error: true,
+      },
+      revalidate: 600, //Rebuild the page, at most every 10 minutes
+    };
+  }
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 600, //Rebuild the page, at most every 10 minutes
+  };
+}
 
 export default Menu;
