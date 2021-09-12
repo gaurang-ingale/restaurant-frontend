@@ -1,10 +1,12 @@
 import styles from "./styles/About.module.scss";
 import Image from "next/image";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
 
 const About = (props) => {
   return (
     <main id={styles.about_container}>
-      <h1 id={styles.about_title}>{props.restaurantTitle}</h1>
+      <h1 id={styles.about_title}>{"About " + props.restaurantTitle}</h1>
       <article id={styles.about_article}>
         <figure>
           <Image
@@ -16,7 +18,7 @@ const About = (props) => {
         </figure>
         <section id={styles.about_description}>
           <h2>{props.restaurantStoryTitle}</h2>
-          <p>{props.restaurantStory}</p>
+          <MDXRemote {...props.restaurantStory} />
         </section>
       </article>
       <footer id={styles.about_contact}>
@@ -45,7 +47,7 @@ export async function getStaticProps(context) {
 
   const restaurantTitle = data.RestaurantTitle;
   const restaurantStoryTitle = data.StoryTitle;
-  const restaurantStory = data.Story;
+  const restaurantStory = await serialize(data.Story);
   const image = data.Image.url;
   const phone = data.Phone;
   const email = data.Email;
