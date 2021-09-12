@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Category from "../components/Category";
 import styles from "./styles/Menu.module.scss";
 
