@@ -1,0 +1,41 @@
+#about_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  margin: auto;
+}
+
+#about_article {
+  display: flex;
+  img {
+    border-radius: 2vw;
+  }
+}
+
+#about_title {
+  margin: 2rem 1rem;
+}
+
+#about_description {
+  max-width: 70%;
+  font-size: 1.35rem;
+  line-height: 1.8rem;
+  text-align: justify;
+}
+
+#about_contact {
+  bottom: 0;
+  position: fixed;
+  z-index: 10;
+  padding: 1rem 1rem;
+  section {
+    display: flex;
+    * {
+      padding: 0 1rem;
+    }
+  }
+  address {
+    padding: 0 1rem;
+  }
+}
