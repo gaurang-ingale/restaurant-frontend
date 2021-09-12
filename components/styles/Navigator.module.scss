@@ -4,9 +4,18 @@
   right: 0;
   margin: 3vh 2vw;
   z-index: 100;
+  padding: 1rem 2rem;
+  background-color: rgb(33, 130, 205);
+  border-radius: 10vw;
+  margin: 0.5rem 1rem -50px 1rem;
 }
 
 #burger_menu {
+  display: none;
+}
+
+#links_container {
+  border-radius: 1vw;
 }
 
 .bare_button {
@@ -14,4 +23,38 @@
   border: none;
   font-size: 3.5rem;
   color: white;
+}
+
+.show_links_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  .bare_button {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .responsive_links_container {
+    .bare_button {
+      display: none;
+    }
+  }
+
+  #burger_menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .show_links_container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    .bare_button {
+      display: block !important;
+      color: white;
+    }
+  }
 }
