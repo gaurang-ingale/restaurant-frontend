@@ -38,9 +38,7 @@ export async function getStaticProps(context) {
 
   if (!data) {
     return {
-      props: {
-        error: true,
-      },
+      notFound: true,
       revalidate: 600, //revalidate every 10 minutes max
     };
   }
