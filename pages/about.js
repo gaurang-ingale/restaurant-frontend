@@ -23,10 +23,19 @@ const About = (props) => {
       </article>
       <footer id={styles.about_contact}>
         <section id={styles.email_phone}>
-          <p>{props.email}</p>
-          <p>{props.phone}</p>
+          <p>
+            <span className="material-icons">email</span>
+            {" " + props.email}
+          </p>
+          <p>
+            <span className="material-icons">call</span>
+            {" " + props.phone}
+          </p>
         </section>
-        <address>{props.address}</address>
+        <address>
+          <span className="material-icons">place</span>
+          {" " + props.address}
+        </address>
       </footer>
     </main>
   );
