@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (min-width: 961px) {
+@media only screen and (min-width: 961px) {
   .show_links_container {
     display: flex;
     flex-direction: row;
