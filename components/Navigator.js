@@ -1,4 +1,5 @@
 import styles from "./styles/Navigator.module.scss";
+import Link from "next/link";
 
 const Navigator = (props) => {
   const handleClick = (e) => {
@@ -27,11 +28,17 @@ const Navigator = (props) => {
         id={styles.links_container}
         className={styles.responsive_links_container}
       >
-        <button className={"material-icons " + styles.bare_button}>home</button>
-        <button className={"material-icons " + styles.bare_button}>
-          restaurant_menu
-        </button>
-        <button className={"material-icons " + styles.bare_button}>info</button>
+        <Link href="/" className={styles.bare_button}>
+          <a className={"material-icons " + styles.bare_button}>home</a>
+        </Link>
+        <Link href="/menu" className={styles.bare_button}>
+          <a className={"material-icons " + styles.bare_button}>
+            restaurant_menu
+          </a>
+        </Link>
+        <Link href="/about">
+          <a className={"material-icons " + styles.bare_button}>info</a>
+        </Link>
       </section>
     </nav>
   );

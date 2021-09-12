@@ -4,10 +4,10 @@
   right: 0;
   margin: 3vh 2vw;
   z-index: 100;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   background-color: rgb(33, 130, 205);
   border-radius: 10vw;
-  margin: 0.5rem 1rem -50px 1rem;
+  margin: 0.5rem 0.5rem -50px 1rem;
 }
 
 #burger_menu {
@@ -23,6 +23,7 @@
   border: none;
   font-size: 3.5rem;
   color: white;
+  text-decoration: none;
 }
 
 .show_links_container {
