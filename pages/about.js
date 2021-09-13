@@ -6,6 +6,9 @@ import { MDXRemote } from "next-mdx-remote";
 const About = (props) => {
   return (
     <main id={styles.about_container}>
+      <head>
+        <title>About{" " + props.restaurantTitle}</title>
+      </head>
       <h1 id={styles.about_title}>{"About " + props.restaurantTitle}</h1>
       <article id={styles.about_article}>
         <figure>

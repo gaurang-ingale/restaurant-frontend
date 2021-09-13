@@ -32,6 +32,9 @@ const Menu = (props) => {
 
   const normal = (
     <main id={styles.menu_container}>
+      <head>
+        <title>Food Menu</title>
+      </head>
       <h1 id={styles.menu_title}>Menu:</h1>
       {prepareCategoryElements(props.data)}
     </main>

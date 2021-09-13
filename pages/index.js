@@ -7,6 +7,9 @@ import { MDXRemote } from "next-mdx-remote";
 export default function Home(props) {
   return (
     <main id={styles.home_container}>
+      <head>
+        <title>{props.homeTitle}</title>
+      </head>
       <Image
         src={"http://localhost:1337" + props.image}
         height="500"

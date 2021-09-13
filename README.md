@@ -18,4 +18,4 @@ This is an example template for a restaurant website.
 1. CMS
    - Strapi CMS
 2. Database
-   - MariaDB
+   - MariaDB (A shopping cart system and checkout system will be implemented at a later date with Java Spring)
