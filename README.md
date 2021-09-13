@@ -4,6 +4,10 @@
 
 This is an example template for a restaurant website.
 
+## Showcase:
+
+![A gif of the working frontend](https://github.com/gaurang-ingale/restaurant-frontend/blob/main/restaurant-frontend_showcase.gif)
+
 ## Technologies used:
 
 ### For the front-end (this repository):
